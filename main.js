@@ -33,23 +33,28 @@ function obtenerPartidos() {
         fecha = dia;
         let fechas = fecha.toString()
 
-        let jornada1 = '11/6/2021';
-        let jornada2 = '12/6/2021';
         console.log(fechas)
 
 
         let tr = document.createElement('tr');
 
+        let tdCalendario = document.createElement('td');
+        tdCalendario.innerHTML = fechas;
+        tdCalendario.classList.add('calendario')
+
 
         let tdGrupo = document.createElement('td');
         tdGrupo.innerHTML = partidos[i].group;
+        tdGrupo.classList.add('grupo')
 
         let tdLocal = document.createElement('td');
 
-        tdLocal.innerHTML = `<img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> ${partidos[i].homeTeam.name}`;
+        tdLocal.innerHTML = `${partidos[i].homeTeam.name} <img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> `;
+        tdLocal.classList.add('local')
 
 
         let tdResultado = document.createElement('td')
+        tdResultado.classList.add('resultado')
         if (partidos[i].score.fullTime.homeTeam === null) {
             // tdResultado.innerHTML = fecha.toLocaleString()
             tdResultado.innerHTML = hora;
@@ -59,7 +64,9 @@ function obtenerPartidos() {
 
         let tdVisitante = document.createElement('td');
         tdVisitante.innerHTML = `<img src= "${urlEquipoVisitante}" alt= "escudo" width= "30px"> ${partidos[i].awayTeam.name}`;
+        tdVisitante.classList.add('visitante')
 
+        tr.append(tdCalendario)
         tr.append(tdGrupo);
         tr.append(tdLocal);
         tr.append(tdResultado);
@@ -94,6 +101,7 @@ function jornada1() {
         let tr = document.createElement('tr');
 
         let tdCalendario = document.createElement('td');
+        tdCalendario.classList.add('calendario')
         if (jornada === 1) {
             tdCalendario.innerHTML = fechas;
 
@@ -101,10 +109,12 @@ function jornada1() {
 
 
         let tdLocal = document.createElement('td');
+        tdLocal.classList.add('local-jornadas')
         if (jornada === 1) {
-            tdLocal.innerHTML = `<img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> ${partidos[i].homeTeam.name}`;
+            tdLocal.innerHTML = `${partidos[i].homeTeam.name} <img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> `;
         }
         let tdResultado = document.createElement('td')
+        tdResultado.classList.add('resultado')
         if (jornada === 1 && partidos[i].score.fullTime.homeTeam === null) {
             tdResultado.innerHTML = hora;
 
@@ -117,6 +127,7 @@ function jornada1() {
         }
 
         let tdVisitante = document.createElement('td');
+        tdVisitante.classList.add('visitante')
         if (jornada === 1) {
             tdVisitante.innerHTML = `<img src= "${urlEquipoVisitante}" alt= "escudo" width= "30px"> ${partidos[i].awayTeam.name}`;
 
@@ -155,16 +166,19 @@ function jornada2() {
         let tr = document.createElement('tr');
 
         let tdCalendario = document.createElement('td');
+        tdCalendario.classList.add('calendario')
         if (jornada === 2) {
             tdCalendario.innerHTML = fechas;
 
         }
 
         let tdLocal = document.createElement('td');
+        tdLocal.classList.add('local-jornadas')
         if (jornada === 2) {
-            tdLocal.innerHTML = `<img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> ${partidos[i].homeTeam.name}`;
+            tdLocal.innerHTML = `${partidos[i].homeTeam.name} <img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> `;
         }
-        let tdResultado = document.createElement('td')
+        let tdResultado = document.createElement('td');
+        tdResultado.classList.add('resultado')
         if (jornada === 2 && partidos[i].score.fullTime.homeTeam === null) {
             tdResultado.innerHTML = hora;
         }
@@ -177,6 +191,7 @@ function jornada2() {
         }
 
         let tdVisitante = document.createElement('td');
+        tdVisitante.classList.add('visitante')
         if (jornada === 2) {
             tdVisitante.innerHTML = `<img src= "${urlEquipoVisitante}" alt= "escudo" width= "30px"> ${partidos[i].awayTeam.name}`;
 
@@ -215,16 +230,19 @@ function jornada3() {
         let tr = document.createElement('tr');
 
         let tdCalendario = document.createElement('td');
+        tdCalendario.classList.add('calendario')
         if (jornada === 3) {
             tdCalendario.innerHTML = fechas;
 
         }
 
         let tdLocal = document.createElement('td');
+        tdLocal.classList.add('local-jornadas3')
         if (jornada === 3) {
-            tdLocal.innerHTML = `<img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> ${partidos[i].homeTeam.name}`;
+            tdLocal.innerHTML = `${partidos[i].homeTeam.name} <img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> `;
         }
-        let tdResultado = document.createElement('td')
+        let tdResultado = document.createElement('td');
+        tdResultado.classList.add('resultado')
         if (jornada === 3 && partidos[i].score.fullTime.homeTeam === null) {
             tdResultado.innerHTML = hora;
         }
@@ -237,6 +255,7 @@ function jornada3() {
         }
 
         let tdVisitante = document.createElement('td');
+        tdVisitante.classList.add('visitante')
         if (jornada === 3) {
             tdVisitante.innerHTML = `<img src= "${urlEquipoVisitante}" alt= "escudo" width= "30px"> ${partidos[i].awayTeam.name}`;
 
