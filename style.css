@@ -73,3 +73,19 @@ h1{
     background-color:beige;
 }
 
+
+
+@media(max-width:768px){
+    .grupo{
+        display: none;
+    }
+    .local, .visitante, .resultado, .calendario{
+        font-size: 15px;
+    }
+    .tabla{
+        width: 100%;
+    }
+    .local-jornadas, .local-jornadas3{
+        font-size: 15px;
+    }
+}
