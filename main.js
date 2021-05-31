@@ -1,5 +1,5 @@
 // const urlGrupos = 'http://api.football-data.org/v2/competitions/2018/standings'
- const urlPartidos = 'http://api.football-data.org/v2/competitions/2018/matches'
+ const urlPartidos = 'https://api.football-data.org/v2/competitions/2018/matches'
 
 fetch(urlPartidos, {
     method: 'GET',

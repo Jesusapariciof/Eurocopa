@@ -1,4 +1,4 @@
- const urlGrupos = 'http://api.football-data.org/v2/competitions/2018/standings'
+ const urlGrupos = 'https://api.football-data.org/v2/competitions/2018/standings'
 
 
  fetch(urlGrupos, {
