@@ -1,20 +1,26 @@
 // const urlGrupos = 'http://api.football-data.org/v2/competitions/2018/standings'
-// const urlPartidos = 'http://api.football-data.org/v2/competitions/2018/matches'
+ const urlPartidos = 'http://api.football-data.org/v2/competitions/2018/matches'
 
-// fetch(urlPartidos, {
-//     method: 'GET',
-//     headers:{
-//         "X-Auth-Token": "4e11d1dfed8845f79d5c260aff10e68a"
-//     }
-// })
-// .then(respuesta => respuesta.json())
-// .then(resultado => console.log(resultado))
+fetch(urlPartidos, {
+    method: 'GET',
+    headers:{
+        "X-Auth-Token": "4e11d1dfed8845f79d5c260aff10e68a"
+    }
+})
+.then(respuesta => respuesta.json())
+.then(resultado => {
 
-const partidos = urlPartidos.matches;
+    const partidos = resultado.matches;
+    obtenerPartidos(partidos)
+    jornada1(partidos)
+    jornada2(partidos)
+    jornada3(partidos)
+})
 
-console.log(partidos)
 
-function obtenerPartidos() {
+
+
+function obtenerPartidos(partidos) {
 
 
     let tbody = document.getElementById('tabla')
@@ -83,13 +89,13 @@ function obtenerPartidos() {
         
         tbody.append(tr)
 
+       
 
     }
 
 }
-obtenerPartidos()
 
-function jornada1() {
+function jornada1(partidos) {
     let jornadas = document.getElementById('jornada1')
     for (let i = 0; i < 36; i++) {
         let idEquipoLocal = partidos[i].homeTeam.id;
@@ -158,9 +164,9 @@ function jornada1() {
 
 }
 
-jornada1()
 
-function jornada2() {
+
+function jornada2(partidos) {
 
     let jornadas = document.getElementById('jornada2')
     for (let i = 0; i < 36; i++) {
@@ -228,9 +234,9 @@ function jornada2() {
 
 }
 
-jornada2()
 
-function jornada3() {
+
+function jornada3(partidos) {
 
     let jornadas = document.getElementById('jornada3')
     for (let i = 0; i < 36; i++) {
@@ -300,5 +306,5 @@ function jornada3() {
 
 }
 
-jornada3()
+
 

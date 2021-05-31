@@ -70,13 +70,14 @@ h1{
 }
 
 .spain{
-    background-color:beige;
+    background-color:#009bb4;
+    color: white;
 }
 
 
 
 @media(max-width:768px){
-    .grupo{
+    .grupo, .golesFavor, .golesContra, .diferenciaGoles {
         display: none;
     }
     .local, .visitante, .resultado, .calendario{
@@ -88,6 +89,7 @@ h1{
     .local-jornadas, .local-jornadas3{
         font-size: 15px;
     }
+    
 }
 
 
@@ -98,6 +100,32 @@ h1{
     width: 60%;
     margin: auto;
 }
+@media(max-width:768px){
+    #grupo2{
+        width: 98%;
+    }
+    
+}
 h5{
     text-align: center;
+    margin-top: 20px;
+    color: #158E9D;
+}
+
+
+/* FOOTER */
+
+footer{
+    background-color: #009bb4;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    color: white;
+}
+.puntos{
+    font-weight: bolder;
 }

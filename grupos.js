@@ -62,15 +62,19 @@
 
         let golesFavorGrupo = document.createElement('td');
         golesFavorGrupo.innerHTML = golesFavor;
+        golesFavorGrupo.classList.add('golesFavor')
 
         let golesContraGrupo = document.createElement('td');
         golesContraGrupo.innerHTML = golesContra;
+        golesContraGrupo.classList.add('golesContra')
 
         let diferenciaGolesGrupo = document.createElement('td');
         diferenciaGolesGrupo.innerHTML = diferenciaGoles;
+        diferenciaGolesGrupo.classList.add('diferenciaGoles')
 
         let puntosGrupo = document.createElement('td');
         puntosGrupo.innerHTML = puntos;
+        puntosGrupo.classList.add('puntos')
 
 
         tr2.append(equiposGrupo);
@@ -134,15 +138,22 @@
 
        let golesFavorGrupo = document.createElement('td');
        golesFavorGrupo.innerHTML = golesFavor;
+       golesFavorGrupo.classList.add('golesFavor')
 
        let golesContraGrupo = document.createElement('td');
        golesContraGrupo.innerHTML = golesContra;
+       golesContraGrupo.classList.add('golesContra')
+
 
        let diferenciaGolesGrupo = document.createElement('td');
        diferenciaGolesGrupo.innerHTML = diferenciaGoles;
+       diferenciaGolesGrupo.classList.add('diferenciaGoles')
+
 
        let puntosGrupo = document.createElement('td');
        puntosGrupo.innerHTML = puntos;
+       puntosGrupo.classList.add('puntos')
+
 
 
        tr2.append(equiposGrupo);
@@ -205,15 +216,22 @@ function grupoC(grupos){
 
        let golesFavorGrupo = document.createElement('td');
        golesFavorGrupo.innerHTML = golesFavor;
+       golesFavorGrupo.classList.add('golesFavor')
 
        let golesContraGrupo = document.createElement('td');
        golesContraGrupo.innerHTML = golesContra;
+       golesContraGrupo.classList.add('golesContra')
+
 
        let diferenciaGolesGrupo = document.createElement('td');
        diferenciaGolesGrupo.innerHTML = diferenciaGoles;
+       diferenciaGolesGrupo.classList.add('diferenciaGoles')
+
 
        let puntosGrupo = document.createElement('td');
        puntosGrupo.innerHTML = puntos;
+       puntosGrupo.classList.add('puntos')
+
 
 
        tr2.append(equiposGrupo);
@@ -276,15 +294,22 @@ function grupoD(grupos){
 
        let golesFavorGrupo = document.createElement('td');
        golesFavorGrupo.innerHTML = golesFavor;
+       golesFavorGrupo.classList.add('golesFavor')
 
        let golesContraGrupo = document.createElement('td');
        golesContraGrupo.innerHTML = golesContra;
+       golesContraGrupo.classList.add('golesContra')
+
 
        let diferenciaGolesGrupo = document.createElement('td');
        diferenciaGolesGrupo.innerHTML = diferenciaGoles;
+       diferenciaGolesGrupo.classList.add('diferenciaGoles')
+
 
        let puntosGrupo = document.createElement('td');
        puntosGrupo.innerHTML = puntos;
+       puntosGrupo.classList.add('puntos')
+
 
 
        tr2.append(equiposGrupo);
@@ -347,15 +372,22 @@ function grupoE(grupos){
 
        let golesFavorGrupo = document.createElement('td');
        golesFavorGrupo.innerHTML = golesFavor;
+       golesFavorGrupo.classList.add('golesFavor')
 
        let golesContraGrupo = document.createElement('td');
        golesContraGrupo.innerHTML = golesContra;
+       golesContraGrupo.classList.add('golesContra')
+
 
        let diferenciaGolesGrupo = document.createElement('td');
        diferenciaGolesGrupo.innerHTML = diferenciaGoles;
+       diferenciaGolesGrupo.classList.add('diferenciaGoles')
+
 
        let puntosGrupo = document.createElement('td');
        puntosGrupo.innerHTML = puntos;
+       puntosGrupo.classList.add('puntos')
+
 
 
        tr2.append(equiposGrupo);
@@ -418,15 +450,22 @@ function grupoF(grupos){
 
        let golesFavorGrupo = document.createElement('td');
        golesFavorGrupo.innerHTML = golesFavor;
+       golesFavorGrupo.classList.add('golesFavor')
 
        let golesContraGrupo = document.createElement('td');
        golesContraGrupo.innerHTML = golesContra;
+       golesContraGrupo.classList.add('golesContra')
+
 
        let diferenciaGolesGrupo = document.createElement('td');
        diferenciaGolesGrupo.innerHTML = diferenciaGoles;
+       diferenciaGolesGrupo.classList.add('diferenciaGoles')
+
 
        let puntosGrupo = document.createElement('td');
        puntosGrupo.innerHTML = puntos;
+       puntosGrupo.classList.add('puntos')
+
 
 
        tr2.append(equiposGrupo);
