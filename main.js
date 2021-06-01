@@ -44,9 +44,9 @@ function obtenerPartidos(partidos) {
 
         let tr = document.createElement('tr');
 
-        let tdCalendario = document.createElement('td');
-        tdCalendario.innerHTML = fechas;
-        tdCalendario.classList.add('calendario')
+        // let tdCalendario = document.createElement('td');
+        // tdCalendario.innerHTML = fechas;
+        // tdCalendario.classList.add('calendario')
 
 
         let tdGrupo = document.createElement('td');
@@ -64,7 +64,7 @@ function obtenerPartidos(partidos) {
         tdResultado.classList.add('resultado')
         if (partidos[i].score.fullTime.homeTeam === null) {
             // tdResultado.innerHTML = fecha.toLocaleString()
-            tdResultado.innerHTML = hora;
+            tdResultado.innerHTML = fechas + hora;
         } else {
             tdResultado.innerHTML = `${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
         }
@@ -74,22 +74,20 @@ function obtenerPartidos(partidos) {
         tdVisitante.classList.add('visitante')
 
         if(partidos[i].homeTeam.name === 'Spain' || partidos[i].awayTeam.name === 'Spain'){
-            tdCalendario.classList.add('spain')
+            // tdCalendario.classList.add('spain')
             tdGrupo.classList.add('spain')
             tdLocal.classList.add('spain')
             tdResultado.classList.add('spain')
             tdVisitante.classList.add('spain')
         }
 
-        tr.append(tdCalendario)
+        // tr.append(tdCalendario)
         tr.append(tdGrupo);
         tr.append(tdLocal);
         tr.append(tdResultado);
         tr.append(tdVisitante);
         
         tbody.append(tr)
-
-       
 
     }
 
@@ -115,14 +113,12 @@ function jornada1(partidos) {
 
         let tr = document.createElement('tr');
 
-        let tdCalendario = document.createElement('td');
-        tdCalendario.classList.add('calendario')
-        if (jornada === 1) {
-            tdCalendario.innerHTML = fechas;
+        // let tdCalendario = document.createElement('td');
+        // tdCalendario.classList.add('calendario')
+        // if (jornada === 1) {
+        //     tdCalendario.innerHTML = fechas;
 
-        }
-
-
+        // }
         let tdLocal = document.createElement('td');
         tdLocal.classList.add('local-jornadas')
         if (jornada === 1) {
@@ -131,14 +127,14 @@ function jornada1(partidos) {
         let tdResultado = document.createElement('td')
         tdResultado.classList.add('resultado')
         if (jornada === 1 && partidos[i].score.fullTime.homeTeam === null) {
-            tdResultado.innerHTML = hora;
+            tdResultado.innerHTML = fechas + hora;
 
         } if (jornada === 2 || jornada === 3) {
             tr.classList.add('ocultar')
         }
 
         else if (jornada === 1 && partidos[i].score.fullTime.homeTeam !== null) {
-            tdResultado.innerHTML = `${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
+            tdResultado.innerHTML = ` ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
         }
 
         let tdVisitante = document.createElement('td');
@@ -148,14 +144,14 @@ function jornada1(partidos) {
 
         }
         if(partidos[i].homeTeam.name === 'Spain' || partidos[i].awayTeam.name === 'Spain'){
-            tdCalendario.classList.add('spain')
+            // tdCalendario.classList.add('spain')
             tdLocal.classList.add('spain')
             tdResultado.classList.add('spain')
             tdVisitante.classList.add('spain')
         }
 
 
-        tr.append(tdCalendario)
+        // tr.append(tdCalendario)
         tr.append(tdLocal)
         tr.append(tdResultado)
         tr.append(tdVisitante)
@@ -186,12 +182,12 @@ function jornada2(partidos) {
 
         let tr = document.createElement('tr');
 
-        let tdCalendario = document.createElement('td');
-        tdCalendario.classList.add('calendario')
-        if (jornada === 2) {
-            tdCalendario.innerHTML = fechas;
+        // let tdCalendario = document.createElement('td');
+        // tdCalendario.classList.add('calendario')
+        // if (jornada === 2) {
+        //     tdCalendario.innerHTML = fechas;
 
-        }
+        // }
 
         let tdLocal = document.createElement('td');
         tdLocal.classList.add('local-jornadas')
@@ -201,7 +197,7 @@ function jornada2(partidos) {
         let tdResultado = document.createElement('td');
         tdResultado.classList.add('resultado')
         if (jornada === 2 && partidos[i].score.fullTime.homeTeam === null) {
-            tdResultado.innerHTML = hora;
+            tdResultado.innerHTML = fechas + hora;
         }
         if (jornada === 1 || jornada === 3) {
             tr.classList.add('ocultar')
@@ -218,14 +214,14 @@ function jornada2(partidos) {
 
         }
         if(partidos[i].homeTeam.name === 'Spain' || partidos[i].awayTeam.name === 'Spain'){
-            tdCalendario.classList.add('spain')
+            // tdCalendario.classList.add('spain')
             tdLocal.classList.add('spain')
             tdResultado.classList.add('spain')
             tdVisitante.classList.add('spain')
         }
 
 
-        tr.append(tdCalendario)
+        // tr.append(tdCalendario)
         tr.append(tdLocal)
         tr.append(tdResultado)
         tr.append(tdVisitante)
@@ -257,12 +253,12 @@ function jornada3(partidos) {
         let tr = document.createElement('tr');
         
 
-        let tdCalendario = document.createElement('td');
-        tdCalendario.classList.add('calendario')
-        if (jornada === 3) {
-            tdCalendario.innerHTML = fechas;
+        // let tdCalendario = document.createElement('td');
+        // tdCalendario.classList.add('calendario')
+        // if (jornada === 3) {
+        //     tdCalendario.innerHTML = fechas;
 
-        }
+        // }
 
         let tdLocal = document.createElement('td');
         tdLocal.classList.add('local-jornadas3')
@@ -273,7 +269,7 @@ function jornada3(partidos) {
         let tdResultado = document.createElement('td');
         tdResultado.classList.add('resultado')
         if (jornada === 3 && partidos[i].score.fullTime.homeTeam === null) {
-            tdResultado.innerHTML = hora;
+            tdResultado.innerHTML = fechas + hora;
         }
         if (jornada === 1 || jornada === 2) {
             tr.classList.add('ocultar')
@@ -290,14 +286,14 @@ function jornada3(partidos) {
 
         }
         if(partidos[i].homeTeam.name === 'Spain' || partidos[i].awayTeam.name === 'Spain'){
-            tdCalendario.classList.add('spain')
+            // tdCalendario.classList.add('spain')
             tdLocal.classList.add('spain')
             tdResultado.classList.add('spain')
             tdVisitante.classList.add('spain')
         }
 
 
-        tr.append(tdCalendario)
+        // tr.append(tdCalendario)
         tr.append(tdLocal)
         tr.append(tdResultado)
         tr.append(tdVisitante)

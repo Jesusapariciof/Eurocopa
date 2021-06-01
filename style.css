@@ -19,7 +19,7 @@
     
 }
 .tabla{
-    width: 80%;
+    width: 60%;
     margin: auto;
 }
 tr{
@@ -31,6 +31,9 @@ tr{
 .calendario, .grupo, .resultado{
     width: 12.5%;
     color: #158E9D;
+}
+.grupo{
+    display: none;
 }
 .resultado{
     text-align: center;
@@ -73,11 +76,17 @@ h1{
     background-color:#009bb4;
     color: white;
 }
+.local-jornadas,.local-jornadas3, .visitante, .local {
+    width: 40%;
+}
+.resultado{
+    width: 20%;
+}
 
 
 
 @media(max-width:768px){
-    .grupo, .golesFavor, .golesContra, .diferenciaGoles {
+    .grupo, .golesFavor, .golesContra, .diferenciaGoles, .calendario {
         display: none;
     }
     .local, .visitante, .resultado, .calendario{
@@ -88,6 +97,12 @@ h1{
     }
     .local-jornadas, .local-jornadas3{
         font-size: 15px;
+    }
+    .local-jornadas,.local-jornadas3, .visitante, .local {
+        width: 40%;
+    }
+    .resultado{
+        width: 20%;
     }
     
 }
