@@ -255,7 +255,7 @@ function grupoC(grupos){
 function grupoD(grupos){
     let tbodyGrupoA = document.getElementById('grupoD');
 
-    let agrupaciones = grupos[4].table
+    let agrupaciones = grupos[3].table
 
     for(i = 0; i < agrupaciones.length; i++){
 
@@ -333,7 +333,7 @@ function grupoD(grupos){
 function grupoE(grupos){
     let tbodyGrupoA = document.getElementById('grupoE');
 
-    let agrupaciones = grupos[3].table
+    let agrupaciones = grupos[4].table
 
     for(i = 0; i < agrupaciones.length; i++){
 
