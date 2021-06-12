@@ -33,7 +33,7 @@ function obtenerPartidos(partidos) {
 
         let urlEquipoLocal = "https://crests.football-data.org/" + idEquipoLocal + ".svg";
         let urlEquipoVisitante = "https://crests.football-data.org/" + idEquipoVisitante + ".svg";
-
+        let status = partidos[i].status
         let fecha = new Date(partidos[i].utcDate)
         let hora = fecha.toLocaleString().slice((0, 10));
         let dia = fecha.toLocaleString().substring(0, 10)
@@ -68,7 +68,7 @@ function obtenerPartidos(partidos) {
             tdResultado.innerHTML = fechas + hora;
         } else {
             
-            tdResultado.innerHTML = `${partidos[i].status}: ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
+            tdResultado.innerHTML = `${status} ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
         }
 
         let tdVisitante = document.createElement('td');
