@@ -11,6 +11,7 @@ fetch(urlPartidos, {
 .then(resultado => {
 
     const partidos = resultado.matches;
+    console.log(partidos)
     obtenerPartidos(partidos)
     jornada1(partidos)
     jornada2(partidos)
@@ -66,7 +67,8 @@ function obtenerPartidos(partidos) {
             // tdResultado.innerHTML = fecha.toLocaleString()
             tdResultado.innerHTML = fechas + hora;
         } else {
-            tdResultado.innerHTML = `${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
+            
+            tdResultado.innerHTML = `${partidos[i].status}: ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
         }
 
         let tdVisitante = document.createElement('td');
@@ -134,7 +136,7 @@ function jornada1(partidos) {
         }
 
         else if (jornada === 1 && partidos[i].score.fullTime.homeTeam !== null) {
-            tdResultado.innerHTML = ` ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
+            tdResultado.innerHTML = `${partidos[i].status}: ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
         }
 
         let tdVisitante = document.createElement('td');
@@ -204,7 +206,7 @@ function jornada2(partidos) {
         }
 
         else if (jornada === 2 && partidos[i].score.fullTime.homeTeam !== null) {
-            tdResultado.innerHTML = `${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
+            tdResultado.innerHTML = `${partidos[i].status}: ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
         }
 
         let tdVisitante = document.createElement('td');
@@ -276,7 +278,7 @@ function jornada3(partidos) {
         }
 
         else if (jornada === 3 && partidos[i].score.fullTime.homeTeam !== null) {
-            tdResultado.innerHTML = `${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
+            tdResultado.innerHTML = `${partidos[i].status}: ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
         }
 
         let tdVisitante = document.createElement('td');
