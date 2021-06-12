@@ -90,7 +90,7 @@ h1{
         display: none;
     }
     .local, .visitante, .resultado, .calendario{
-        font-size: 18px;
+        font-size: 15px;
     }
     .tabla{
         width: 100%;
