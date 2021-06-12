@@ -68,7 +68,7 @@ function obtenerPartidos(partidos) {
             tdResultado.innerHTML = fechas + hora;
         } else {
             
-            tdResultado.innerHTML = `${status} ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
+            tdResultado.innerHTML = `${status}: ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
         }
 
         let tdVisitante = document.createElement('td');
