@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eurocopa 2020</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -24,6 +24,9 @@
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#ultima-jornada" type="button" role="tab" aria-controls="contact" aria-selected="false">Jornada 3</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="jornada2-tab" data-bs-toggle="tab" data-bs-target="#octavos" type="button" role="tab" aria-controls="contact" aria-selected="false">Octavos</button>
           </li>
 
           <li class="nav-item" role="presentation">
@@ -100,6 +103,16 @@
         </table>
         </div>
         </div>
+
+        <!-- OCTAVOS -->
+        <div class="tab-pane fade" id="octavos" role="tabpanel" aria-labelledby="ultima-jornada-tab">
+            <h5>OCTAVOS DE FINAL</h5>
+      <div class="tablaPartidos table table-hover">
+        <table class="tabla table-light">
+                    <tbody class="octavos"></tbody>
+                </table>
+                </div>
+                </div>
 
 
         <div class="tab-pane fade" id="clasificacion" role="tabpanel" aria-labelledby="ultima-jornada-tab">
@@ -255,6 +268,6 @@
     <script src="/partidos.js"></script>
     <script src="/main.js"></script>
     <script src="/grupos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
