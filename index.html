@@ -17,7 +17,7 @@
           <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Todos los partidos</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Jornada 1</button>
+          <button class="nav-link jornada " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Jornada 1</button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="jornada2-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Jornada 2</button>
@@ -27,6 +27,15 @@
           </li>
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="jornada2-tab" data-bs-toggle="tab" data-bs-target="#octavos" type="button" role="tab" aria-controls="contact" aria-selected="false">Octavos</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="jornada2-tab" data-bs-toggle="tab" data-bs-target="#cuartos" type="button" role="tab" aria-controls="contact" aria-selected="false">Cuartos</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="jornada2-tab" data-bs-toggle="tab" data-bs-target="#semis" type="button" role="tab" aria-controls="contact" aria-selected="false">Semis</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="jornada2-tab" data-bs-toggle="tab" data-bs-target="#final" type="button" role="tab" aria-controls="contact" aria-selected="false">Final</button>
           </li>
 
           <li class="nav-item" role="presentation">
@@ -38,7 +47,7 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <h5>PARTIDOS FASE DE GRUPOS</h5>
-      <div class="tablaPartidos table table-hover">
+      <div class="tablaPartidos table table-hover ">
           <table class="tabla table-light">
               <!-- <thead>
                   <tr>
@@ -114,7 +123,35 @@
                 </div>
                 </div>
 
+         <!-- CUARTOS -->
+         <div class="tab-pane fade" id="cuartos" role="tabpanel" aria-labelledby="ultima-jornada-tab">
+            <h5>CUARTOS DE FINAL</h5>
+      <div class="tablaPartidos table table-hover tablaCuartos">
+        <table class="tabla table-light">
+                    <tbody class="cuartos"></tbody>
+                </table>
+                </div>
+                </div>
+                 <!-- SEMIS -->
+         <div class="tab-pane fade" id="semis" role="tabpanel" aria-labelledby="ultima-jornada-tab">
+            <h5>SEMIFINALES</h5>
+      <div class="tablaPartidos table table-hover tablaCuartos">
+        <table class="tabla table-light">
+                    <tbody class="semis"></tbody>
+                </table>
+                </div>
+                </div>
+                      <!-- FINAL -->
+         <div class="tab-pane fade" id="final" role="tabpanel" aria-labelledby="ultima-jornada-tab">
+            <h5>FINAL</h5>
+      <div class="tablaPartidos table table-hover tablaCuartos">
+        <table class="tabla table-light">
+                    <tbody class="final"></tbody>
+                </table>
+                </div>
+                </div>
 
+           <!-- GRUPOS -->
         <div class="tab-pane fade" id="clasificacion" role="tabpanel" aria-labelledby="ultima-jornada-tab">
             
             <h5>Grupo A</h5>

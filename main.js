@@ -17,6 +17,9 @@ fetch(urlPartidos, {
     jornada2(partidos)
     jornada3(partidos)
     octavos(partidos)
+    cuartos(partidos)
+    semis(partidos)
+    final(partidos)
 })
 
 
@@ -27,7 +30,7 @@ function obtenerPartidos(partidos) {
 
     let tbody = document.getElementById('tabla')
 
-    for (let i = 0; i < 44; i++) {
+    for (let i = 0; i < 51; i++) {
 
         let idEquipoLocal = partidos[i].homeTeam.id;
         let idEquipoVisitante = partidos[i].awayTeam.id;
@@ -40,6 +43,7 @@ function obtenerPartidos(partidos) {
         let dia = fecha.toLocaleString().substring(0, 10)
         fecha = dia;
         let fechas = fecha.toString()
+        let jornada = partidos[i].matchday;
 
         console.log(fechas)
 
@@ -56,11 +60,14 @@ function obtenerPartidos(partidos) {
         tdGrupo.classList.add('grupo')
 
         let tdLocal = document.createElement('td');
-        
-
+        tdLocal.classList.add('local-jornadas')
+        if(jornada === 5 && partidos[i].homeTeam.name === null ||jornada === 6 && partidos[i].homeTeam.name === null || jornada === 7 && partidos[i].homeTeam.name === null){
+            tdLocal.innerHTML = 'Pendiente'
+        }
+       else{
         tdLocal.innerHTML = `${partidos[i].homeTeam.name} <img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> `;
         tdLocal.classList.add('local')
-
+       }
 
         let tdResultado = document.createElement('td')
         tdResultado.classList.add('resultado')
@@ -73,9 +80,14 @@ function obtenerPartidos(partidos) {
         }
 
         let tdVisitante = document.createElement('td');
-        tdVisitante.innerHTML = `<img src= "${urlEquipoVisitante}" alt= "escudo" width= "30px"> ${partidos[i].awayTeam.name}`;
         tdVisitante.classList.add('visitante')
-
+        if(jornada === 5 && partidos[i].awayTeam.name === null ||jornada === 6 && partidos[i].awayTeam.name === null || jornada === 7 && partidos[i].awayTeam.name === null){
+            tdVisitante.innerHTML = 'Pendiente'
+        }
+        else{
+            tdVisitante.innerHTML = `<img src= "${urlEquipoVisitante}" alt= "escudo" width= "30px"> ${partidos[i].awayTeam.name}`;
+        tdVisitante.classList.add('visitante')
+        }
         if(partidos[i].homeTeam.name === 'Spain' || partidos[i].awayTeam.name === 'Spain'){
             // tdCalendario.classList.add('spain')
             tdGrupo.classList.add('spain')
@@ -347,6 +359,208 @@ function octavos(partidos) {
         let tdVisitante = document.createElement('td');
         tdVisitante.classList.add('visitante')
         if (jornada === 4) {
+            tdVisitante.innerHTML = `<img src= "${urlEquipoVisitante}" alt= "escudo" width= "30px"> ${partidos[i].awayTeam.name}`;
+
+        }
+        if(partidos[i].homeTeam.name === 'Spain' || partidos[i].awayTeam.name === 'Spain'){
+            // tdCalendario.classList.add('spain')
+            tdLocal.classList.add('spain')
+            tdResultado.classList.add('spain')
+            tdVisitante.classList.add('spain')
+        }
+
+
+        // tr.append(tdCalendario)
+        tr.append(tdLocal)
+        tr.append(tdResultado)
+        tr.append(tdVisitante)
+        jornadas.append(tr)
+    }
+
+}
+
+function cuartos(partidos) {
+
+    let jornadas = document.querySelector('.cuartos')
+    for (let i = 0; i < 48; i++) {
+        let idEquipoLocal = partidos[i].homeTeam.id;
+        let idEquipoVisitante = partidos[i].awayTeam.id;
+
+        let urlEquipoLocal = "https://crests.football-data.org/" + idEquipoLocal + ".svg";
+        let urlEquipoVisitante = "https://crests.football-data.org/" + idEquipoVisitante + ".svg";
+
+        let fecha = new Date(partidos[i].utcDate)
+        let hora = fecha.toLocaleString().slice((0, 10));
+        let dia = fecha.toLocaleString().substring(0, 10)
+        fecha = dia;
+        let fechas = fecha.toString()
+
+        let jornada = partidos[i].matchday;
+
+        let tr = document.createElement('tr');
+        
+        let tdLocal = document.createElement('td');
+        tdLocal.classList.add('local-jornadas')
+        if(jornada === 5 && partidos[i].homeTeam.name === null ){
+            tdLocal.innerHTML = 'Pendiente'
+        }
+        else if (jornada === 5) {
+            tdLocal.innerHTML = `${partidos[i].homeTeam.name} <img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> `;
+        }
+        
+        let tdResultado = document.createElement('td');
+        tdResultado.classList.add('resultado')
+        if (jornada === 5 && partidos[i].score.fullTime.homeTeam === null) {
+            tdResultado.innerHTML = fechas + hora;
+        }
+        if (jornada === 1 || jornada === 2 || jornada === 3 || jornada === 4) {
+            tr.classList.add('ocultar')
+        }
+
+        else if (jornada === 5 && partidos[i].score.fullTime.homeTeam !== null) {
+            tdResultado.innerHTML = `${partidos[i].status}: ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
+        }
+
+        let tdVisitante = document.createElement('td');
+        tdVisitante.classList.add('visitante')
+        if(jornada === 5 && partidos[i].awayTeam.name === null){
+            tdVisitante.innerHTML = 'Pendiente'
+        }
+        else if (jornada === 5) {
+            tdVisitante.innerHTML = `<img src= "${urlEquipoVisitante}" alt= "escudo" width= "30px"> ${partidos[i].awayTeam.name}`;
+
+        }
+        if(partidos[i].homeTeam.name === 'Spain' || partidos[i].awayTeam.name === 'Spain'){
+            // tdCalendario.classList.add('spain')
+            tdLocal.classList.add('spain')
+            tdResultado.classList.add('spain')
+            tdVisitante.classList.add('spain')
+        }
+
+
+        // tr.append(tdCalendario)
+        tr.append(tdLocal)
+        tr.append(tdResultado)
+        tr.append(tdVisitante)
+        jornadas.append(tr)
+    }
+
+}
+function semis(partidos) {
+
+    let jornadas = document.querySelector('.semis')
+    for (let i = 0; i < 51; i++) {
+        let idEquipoLocal = partidos[i].homeTeam.id;
+        let idEquipoVisitante = partidos[i].awayTeam.id;
+
+        let urlEquipoLocal = "https://crests.football-data.org/" + idEquipoLocal + ".svg";
+        let urlEquipoVisitante = "https://crests.football-data.org/" + idEquipoVisitante + ".svg";
+
+        let fecha = new Date(partidos[i].utcDate)
+        let hora = fecha.toLocaleString().slice((0, 10));
+        let dia = fecha.toLocaleString().substring(0, 10)
+        fecha = dia;
+        let fechas = fecha.toString()
+
+        let jornada = partidos[i].matchday;
+
+        let tr = document.createElement('tr');
+        
+        let tdLocal = document.createElement('td');
+        tdLocal.classList.add('local-jornadas')
+        if(jornada === 6 && partidos[i].homeTeam.name === null ){
+            tdLocal.innerHTML = 'Pendiente'
+        }
+        else if (jornada === 6) {
+            tdLocal.innerHTML = `${partidos[i].homeTeam.name} <img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> `;
+        }
+        
+        let tdResultado = document.createElement('td');
+        tdResultado.classList.add('resultado')
+        if (jornada === 6 && partidos[i].score.fullTime.homeTeam === null) {
+            tdResultado.innerHTML = fechas + hora;
+        }
+        if (jornada === 1 || jornada === 2 || jornada === 3 || jornada === 4 || jornada === 5 || jornada === 7) {
+            tr.classList.add('ocultar')
+        }
+
+        else if (jornada === 6 && partidos[i].score.fullTime.homeTeam !== null) {
+            tdResultado.innerHTML = `${partidos[i].status}: ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
+        }
+
+        let tdVisitante = document.createElement('td');
+        tdVisitante.classList.add('visitante')
+        if(jornada === 6 && partidos[i].awayTeam.name === null){
+            tdVisitante.innerHTML = 'Pendiente'
+        }
+        else if (jornada === 6) {
+            tdVisitante.innerHTML = `<img src= "${urlEquipoVisitante}" alt= "escudo" width= "30px"> ${partidos[i].awayTeam.name}`;
+
+        }
+        if(partidos[i].homeTeam.name === 'Spain' || partidos[i].awayTeam.name === 'Spain'){
+            // tdCalendario.classList.add('spain')
+            tdLocal.classList.add('spain')
+            tdResultado.classList.add('spain')
+            tdVisitante.classList.add('spain')
+        }
+
+
+        // tr.append(tdCalendario)
+        tr.append(tdLocal)
+        tr.append(tdResultado)
+        tr.append(tdVisitante)
+        jornadas.append(tr)
+    }
+
+}
+function final(partidos) {
+
+    let jornadas = document.querySelector('.final')
+    for (let i = 0; i < 51; i++) {
+        let idEquipoLocal = partidos[i].homeTeam.id;
+        let idEquipoVisitante = partidos[i].awayTeam.id;
+
+        let urlEquipoLocal = "https://crests.football-data.org/" + idEquipoLocal + ".svg";
+        let urlEquipoVisitante = "https://crests.football-data.org/" + idEquipoVisitante + ".svg";
+
+        let fecha = new Date(partidos[i].utcDate)
+        let hora = fecha.toLocaleString().slice((0, 10));
+        let dia = fecha.toLocaleString().substring(0, 10)
+        fecha = dia;
+        let fechas = fecha.toString()
+
+        let jornada = partidos[i].matchday;
+
+        let tr = document.createElement('tr');
+        
+        let tdLocal = document.createElement('td');
+        tdLocal.classList.add('local-jornadas')
+        if(jornada === 7 && partidos[i].homeTeam.name === null ){
+            tdLocal.innerHTML = 'Pendiente'
+        }
+        else if (jornada === 7) {
+            tdLocal.innerHTML = `${partidos[i].homeTeam.name} <img src= "${urlEquipoLocal}" alt= "escudo" width= "30px"> `;
+        }
+        
+        let tdResultado = document.createElement('td');
+        tdResultado.classList.add('resultado')
+        if (jornada === 7 && partidos[i].score.fullTime.homeTeam === null) {
+            tdResultado.innerHTML = fechas + hora;
+        }
+        if (jornada === 1 || jornada === 2 || jornada === 3 || jornada === 4 || jornada === 5 || jornada === 6) {
+            tr.classList.add('ocultar')
+        }
+
+        else if (jornada === 7 && partidos[i].score.fullTime.homeTeam !== null) {
+            tdResultado.innerHTML = `${partidos[i].status}: ${partidos[i].score.fullTime.homeTeam} - ${partidos[i].score.fullTime.awayTeam}`
+        }
+
+        let tdVisitante = document.createElement('td');
+        tdVisitante.classList.add('visitante')
+        if(jornada === 7 && partidos[i].awayTeam.name === null){
+            tdVisitante.innerHTML = 'Pendiente'
+        }
+        else if (jornada === 7) {
             tdVisitante.innerHTML = `<img src= "${urlEquipoVisitante}" alt= "escudo" width= "30px"> ${partidos[i].awayTeam.name}`;
 
         }
